@@ -1,5 +1,22 @@
 {
+	"name": "james/php-consul",
+	"description": "laravel5.5整合kong网关的一个应用插件",
+	"type": "library",
+    "license": "MIT",
+	"authors": [
+        {
+            "name": "jamespi",
+            "email": "jianzhongpi@163.com"
+        }
+    ],
+    "minimum-stability": "dev",
     "require": {
-        "guzzlehttp/guzzle": "~6.0"
+		"php":">=7.0",
+        "guzzlehttp/guzzle": "^6.5"
+    },
+	"autoload": {
+        "psr-4": {
+            "Jamespi\\Consul\\": "src/"
+        }
     }
 }
