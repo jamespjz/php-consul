@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://D:/project_directory/zt/open_system/jamespi/.idea/jamespi.iml" filepath="D:/project_directory/zt/open_system/jamespi/.idea/jamespi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/php-consul.iml" filepath="$PROJECT_DIR$/.idea/php-consul.iml" />
+    </modules>
+  </component>
+</project>
