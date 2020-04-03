@@ -1,9 +1,9 @@
 {
-	"name": "james/php-consul",
-	"description": "php整合consul进行服务治理的一个应用插件",
-	"type": "library",
+    "name": "james/php-consul",
+    "description": "php整合consul进行服务治理的一个应用插件",
+    "type": "library",
     "license": "MIT",
-	"authors": [
+    "authors": [
         {
             "name": "jamespi",
             "email": "jianzhongpi@163.com"
@@ -13,7 +13,7 @@
     "require": {
 		"php":">=7.0",
         "guzzlehttp/guzzle": "^6.5"
-    },
+	},
 	"autoload": {
         "psr-4": {
             "Jamespi\\Consul\\": "src/"
