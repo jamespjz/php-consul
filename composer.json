@@ -1,5 +1,5 @@
 {
-    "name": "james/php-consul",
+    "name": "james/php-consul-plugin",
     "description": "php整合consul进行服务治理的一个应用插件",
     "type": "library",
     "license": "MIT",
