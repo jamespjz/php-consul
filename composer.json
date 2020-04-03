@@ -1,6 +1,6 @@
 {
 	"name": "james/php-consul",
-	"description": "laravel5.5整合kong网关的一个应用插件",
+	"description": "php整合consul进行服务治理的一个应用插件",
 	"type": "library",
     "license": "MIT",
 	"authors": [
