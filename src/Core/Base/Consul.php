@@ -8,6 +8,8 @@
 
 namespace Jamespi\Consul\Core\Base;
 
+use Jamespi\Consul\Common\HttpHelper;
+
 abstract class Consul{
 
     /**
@@ -24,6 +26,30 @@ abstract class Consul{
      * @var array
      */
     protected $parames = [];
+
+    /**
+     * HttpHelper类对象
+     * @var HttpHelper
+     */
+    protected $http;
+
+    /**
+     * CheckHelper类对象
+     * @var CheckHelper
+     */
+    protected $check;
+
+    /**
+     * 请求路径
+     * @var string
+     */
+    protected $baseUri;
+
+    public function __construct()
+    {
+        $this->http = new HttpHelper();
+        $this->baseUri = "http://".self::$basicParameters['ip'].":".self::$basicParameters['port'];
+    }
 
     /**
      * 注册服务

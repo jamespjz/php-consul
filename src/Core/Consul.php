@@ -8,19 +8,9 @@
 
 namespace Jamespi\Consul\Core;
 
-use Jamespi\Consul\Common\HttpHelper;
-use Jamespi\Consul\Common\CheckHelper;
 use Jamespi\Consul\Core\Base\Consul as BaseConsul;
 
 class Consul extends BaseConsul{
-
-    private $_Http;
-    private $_baseUri;
-
-    public function __construct(HttpHelper $http)
-    {
-        $this->_Http = $http;
-    }
 
     /**
      * 注册服务
@@ -30,7 +20,7 @@ class Consul extends BaseConsul{
     public function registrationService(string $serviceName):string
     {
         $apiStr='/v1/health/checks/'.$serviceName;
-        return $this->_Http->get($this->baseUri, $apiStr);
+        return $this->http->get($this->baseUri, $apiStr);
     }
 
 }

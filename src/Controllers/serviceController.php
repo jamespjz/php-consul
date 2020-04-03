@@ -9,19 +9,29 @@
 namespace Jamespi\Consul\Controller;
 
 use Jamespi\Consul\Core\Consul;
+use Jamespi\Consul\Common\CheckHelper;
 
 class serviceController {
 
     protected $Consul;
 
-    public function __construct(Consul $Consul)
+    public function __construct(Consul $Consul, $ip, $port)
     {
         $this->Consul = $Consul;
         $config = require_once(dirname(dirname(__DIR__)).'/config/config.php');
-        $Consul::$basicParameters = [
-            'ip' => $config['server']['ip'],
-            'port' => $config['server']['port']
-        ];
+
+    }
+
+    /**
+     * 检测ip端口是否正常
+     * @return string
+     */
+    public function checkPingIP(){
+        $check = new CheckHelper();
+        //检测ip端口是否正常
+        if(!$check->ping($this->Consul::basicParameters['ip'], $this->Consul::basicParameters['port'])){
+            return 'this ip port address failed to connect.';
+        }
     }
 
     /**

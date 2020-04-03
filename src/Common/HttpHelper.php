@@ -6,7 +6,8 @@
 namespace Jamespi\Consul\Common;
 require_once dirname(dirname(__DIR__)).'/vendor/autoload.php';
 use \GuzzleHttp\Client as HttpClient;
-class HttpHelper {
+use Jamespi\Consul\Api\httpInterFace;
+class HttpHelper implements httpInterFace{
 
     /**
      * 发起post请求
@@ -77,7 +78,7 @@ class HttpHelper {
      * @param string $apiStr 请求路径/参数
      * @return string
      */
-    public function delete(string $baseUri, string $apiStr)
+    public function delete(string $baseUri, string $apiStr):string
     {
         $client = new HttpClient( ['base_uri' => $baseUri] );
         $res = $client->request('DELETE', $apiStr);
