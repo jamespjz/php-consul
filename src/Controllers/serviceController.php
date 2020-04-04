@@ -6,7 +6,7 @@
  * @create 2020年4月2日 17:38
  */
 
-namespace Jamespi\Consul\Controller;
+namespace Jamespi\Consul\Controllers;
 
 use Jamespi\Consul\Core\Consul;
 use Jamespi\Consul\Common\CheckHelper;
