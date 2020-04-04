@@ -16,7 +16,7 @@ abstract class Consul{
      * 基础参数设置
      * @var array
      */
-    public static $basicParameters = [
+    public $basicParameters = [
         'ip' => '',
         'port' => '',
     ];
@@ -43,12 +43,11 @@ abstract class Consul{
      * 请求路径
      * @var string
      */
-    protected $baseUri;
+    public $baseUri;
 
     public function __construct()
     {
         $this->http = new HttpHelper();
-        $this->baseUri = "http://".self::$basicParameters['ip'].":".self::$basicParameters['port'];
     }
 
     /**

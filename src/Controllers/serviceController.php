@@ -17,22 +17,25 @@ class serviceController {
 
     public function __construct(Consul $Consul, $ip, $port)
     {
-        $this->Consul = $Consul;
-        $config = require_once(dirname(dirname(__DIR__)).'/config/config.php');
-        $this->Consul::basicParameters = [
+        $Consul->basicParameters = [
             'ip' => $ip,
             'port' => $port,
         ];
+        $Consul->baseUri = "http://".$ip.":".$port;
+        $this->Consul = $Consul;
+        $this->checkPingIP($ip, $port);
     }
 
     /**
      * 检测ip端口是否正常
+     * @param string $ip IP
+     * @param string $port 端口
      * @return string
      */
-    public function checkPingIP(){
+    public function checkPingIP($ip, $port){
         $check = new CheckHelper();
         //检测ip端口是否正常
-        if(!$check->ping($this->Consul::basicParameters['ip'], $this->Consul::basicParameters['port'])){
+        if(!$check->ping($ip, $port)){
             return 'this ip port address failed to connect.';
         }
     }
