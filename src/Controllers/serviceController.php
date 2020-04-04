@@ -19,7 +19,10 @@ class serviceController {
     {
         $this->Consul = $Consul;
         $config = require_once(dirname(dirname(__DIR__)).'/config/config.php');
-
+        $this->Consul::basicParameters = [
+            'ip' => $ip,
+            'port' => $port,
+        ];
     }
 
     /**
