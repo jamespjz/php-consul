@@ -4,9 +4,10 @@
  */
 
 namespace Jamespi\Consul\Common;
-require_once dirname(dirname(__DIR__)).'/vendor/autoload.php';
+
 use \GuzzleHttp\Client as HttpClient;
 use Jamespi\Consul\Api\httpInterFace;
+
 class HttpHelper implements httpInterFace{
 
     /**
