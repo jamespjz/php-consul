@@ -14,13 +14,13 @@ class Consul extends BaseConsul{
 
     /**
      * 注册服务
-     * @param string $serviceName
+     * @param array $body 注册服务详情
      * @return string
      */
-    public function registrationService(string $serviceName):string
+    public function registrationService(array $body):string
     {
-        $apiStr='/v1/health/checks/'.$serviceName;
-        return $this->http->get($this->baseUri, $apiStr);
+        $apiStr='/v1/agent/service/register';
+        return $this->http->put($this->baseUri, $body, $apiStr);
     }
 
 }

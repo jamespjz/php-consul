@@ -52,9 +52,9 @@ abstract class Consul{
 
     /**
      * 注册服务
-     * @param string $serviceName
+     * @param array $body 注册服务详情
      * @return mixed
      */
-    abstract protected function registrationService(string $serviceName):string ;
+    abstract protected function registrationService(array $body):string ;
 
 }

@@ -42,11 +42,11 @@ class serviceController {
 
     /**
      *  注册consul服务
-     * @param string $serviceName
+     * @param array $body 注册服务详情
      * @return string
      */
-    public function registrationService(string $serviceName):string
+    public function registrationService(array $body):string
     {
-        return $this->Consul->registrationService($serviceName);
+        return $this->Consul->registrationService($body);
     }
 }
