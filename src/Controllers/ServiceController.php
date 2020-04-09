@@ -11,7 +11,7 @@ namespace Jamespi\Consul\Controllers;
 use Jamespi\Consul\Core\Consul;
 use Jamespi\Consul\Common\CheckHelper;
 
-class serviceController {
+class ServiceController {
 
     protected $Consul;
 
