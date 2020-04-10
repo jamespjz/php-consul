@@ -52,7 +52,7 @@ class ServiceController {
 
     /**
      * 查询consul服务单个支点信息
-     * @param string $serviceName
+     * @param string $serviceName 服务支点名称
      * @return string
      */
     public function getServiceInfo(string $serviceName):string
@@ -62,7 +62,7 @@ class ServiceController {
 
     /**
      * 删除consul单个服务支点
-     * @param string $serviceName
+     * @param string $serviceName 服务支点名称
      * @return string
      */
     public function deleteService(string $serviceName):string
@@ -77,5 +77,24 @@ class ServiceController {
     public function getServicesList():string
     {
         return $this->Consul->getAgentServicesList();
+    }
+
+    /**
+     * 对指定服务进行健康检测
+     * @param string $serviceName 服务支点名称
+     * @return string
+     */
+    public function checkHealthService(string $serviceName):string
+    {
+        return $this->Consul->checkHealthService($serviceName);
+    }
+
+    /**
+     * 对本地节点进行健康检测
+     * @return string
+     */
+    public function checkHealthLocal():string
+    {
+        return $this->Consul->checkHealthLocal();
     }
 }
