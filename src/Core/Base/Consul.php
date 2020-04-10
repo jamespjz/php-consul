@@ -55,6 +55,38 @@ abstract class Consul{
      * @param array $body 注册服务详情
      * @return mixed
      */
-    abstract protected function registrationService(array $body):string ;
+    abstract protected function registrationAgentService(array $body):string ;
 
+    /**
+     * 查询consul服务单个支点信息
+     * @param string $serviceName 服务支点名称
+     * @return string
+     */
+    abstract protected function getAgentServiceInfo(string $serviceName):string ;
+
+    /**
+     * 删除consul单个服务支点
+     * @param string $serviceName 服务支点名称
+     * @return string
+     */
+    abstract protected function deleteAgentService(string $serviceName):string ;
+
+    /**
+     * 获取服务节点中所有服务支点
+     * @return string
+     */
+    abstract protected function getAgentServicesList():string ;
+
+    /**
+     * 对指定服务进行健康检测
+     * @param string $serviceName 服务支点名称
+     * @return string
+     */
+    abstract protected function checkHealthService(string $serviceName):string ;
+
+    /**
+     * 对本地节点进行健康检测
+     * @return string
+     */
+    abstract protected function checkHealthLocal():string ;
 }

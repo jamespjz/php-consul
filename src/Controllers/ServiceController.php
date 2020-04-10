@@ -47,6 +47,35 @@ class ServiceController {
      */
     public function registrationService(array $body):string
     {
-        return $this->Consul->registrationService($body);
+        return $this->Consul->registrationAgentService($body);
+    }
+
+    /**
+     * 查询consul服务单个支点信息
+     * @param string $serviceName
+     * @return string
+     */
+    public function getServiceInfo(string $serviceName):string
+    {
+        return $this->Consul->getAgentServiceInfo($serviceName);
+    }
+
+    /**
+     * 删除consul单个服务支点
+     * @param string $serviceName
+     * @return string
+     */
+    public function deleteService(string $serviceName):string
+    {
+        return $this->Consul->deleteAgentService($serviceName);
+    }
+
+    /**
+     * 获取服务节点中所有服务支点
+     * @return string
+     */
+    public function getServicesList():string
+    {
+        return $this->Consul->getAgentServicesList();
     }
 }
